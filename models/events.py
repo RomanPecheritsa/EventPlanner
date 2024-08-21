@@ -13,6 +13,7 @@ class Event(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
+                "id": 1,
                 "title": "Meeting of the smart guys",
                 "image": "https://test.com",
                 "description": "Very good meeting",
