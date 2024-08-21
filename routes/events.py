@@ -1,8 +1,11 @@
-from fastapi import APIRouter, Body, HTTPException, status
-from models.events import Event
 from typing import List
 
-event_router = APIRouter(tags=["Events"])
+from fastapi import APIRouter, Body, HTTPException, status
+from models.events import Event
+
+event_router = APIRouter(
+    tags=["Events"]
+)
 
 events = []
 
@@ -39,13 +42,8 @@ async def delete_event(id: int) -> dict:
             return {
                 "message": "Event deleted successfully"
             }
-    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                        detail="Event with supplied ID does not exist")
 
-
-@event_router.delete("/")
-async def delete_all_events() -> dict:
-    events.clear()
-    return {
-        "message": "Events deleted successfully"
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Event with supplied ID does not exist"
+    )
