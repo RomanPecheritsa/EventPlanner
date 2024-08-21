@@ -11,7 +11,7 @@ class User(BaseModel):
         json_schema_extra = {
             "example": {
                 "email": "fastapi@packt.com",
-                "username": "strong!!!",
+                "password": "strong!!!",
             }
         }
 
